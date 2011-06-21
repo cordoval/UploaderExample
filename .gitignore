@@ -1,0 +1,14 @@
+web/bundles/
+app/bootstrap*
+app/cache/*
+app/logs/*
+build/
+vendor/*
+!vendor/Zend
+!vendor/Zend/*
+.idea/
+*.php~
+web/css/*
+web/js/*
+web/images/*
+app/config/parameters.ini
