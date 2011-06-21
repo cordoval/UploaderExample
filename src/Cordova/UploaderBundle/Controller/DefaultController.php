@@ -24,10 +24,7 @@ class DefaultController extends Controller
 
                 $signeddocument = $form->getData();
 
-                //print_r($signeddocument);
-                //$form['attachment']->move($dir, 'signeddoc.doc');
                 $uploadedfile = $signeddocument->getAttachment();
-                //$uploadedfile = $signeddocument['attachment'];
                 $uploadedfile->move($dir, 'signeddoc.doc');
 
                 $em = $this->get('doctrine')->getEntityManager();
