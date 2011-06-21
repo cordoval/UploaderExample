@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
+    - { resource: "@CordovaUploaderBundle/Resources/config/form.xml" }
 
 framework:
     secret:          %secret%

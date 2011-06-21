@@ -1,0 +1,2 @@
+homepage:
+    resource: "@CordovaUploaderBundle/Resources/config/routing/routing.yml"

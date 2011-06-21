@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="cordova_uploader.form.signeddocument.name">signeddocument</parameter>
+        <parameter key="cordova_uploader.form.signeddocument.type">cordova_uploader.signeddocument</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="cordova_uploader.form_type.signeddocument" class="Cordova\UploaderBundle\Form\SignedDocumentType">
+            <tag name="form.type" alias="cordova_uploader.signeddocument" />
+        </service>
+
+        <service id="cordova_uploader.form_factory.signeddocument" class="Cordova\UploaderBundle\FormFactory\SignedDocumentFormFactory">
+            <argument type="service" id="form.factory" />
+            <argument>%cordova_uploader.form.signeddocument.type%</argument>
+            <argument>%cordova_uploader.form.signeddocument.name%</argument>
+            <argument type="collection">
+                <argument key="validation_groups" type="collection">
+                    <argument>CreateSignedDocument</argument>
+                </argument>
+            </argument>
+        </service>
+
+    </services>
+
+</container>

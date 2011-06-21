@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<form action="{{ path('homepage') }}" method="POST" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
+    
+    <div>
+        {{ form_widget(form) }}
+    </div>
+    
+    <div>
+        {{ form_rest(form) }}
+    </div>
+    
+    <div>
+        <input type="submit" value="Upload"/>
+    </div>
+    
+</form>
+
+{% endblock %}
